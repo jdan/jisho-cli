@@ -33,3 +33,9 @@ Examples:
 The flag `-i` can be used to start the application interactively. The user then is prompted for search terms repeatedly (the first search term can still be provided as argument). Pressing enter without entering any text exits the application.
 
 Using interactive mode is recommended for multiple searches as it keeps the session/cache alive. Subsequent requests thus need to transmit less data.
+
+### Audio Pronunciation
+
+When available, pronunciation audio is indicated with a 🔊 icon next to the hiragana reading. After viewing results, you can use the arrow keys to navigate between entries with audio, and press Enter to play the pronunciation in your terminal.
+
+**Note:** Audio playback requires an audio player to be installed on your system. The application will automatically use one of the following (in order of preference): `mpg123`, `ffplay` (part of FFmpeg), `afplay` (macOS), or `play` (part of SoX).
