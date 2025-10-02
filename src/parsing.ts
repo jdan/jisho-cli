@@ -43,7 +43,11 @@ export function parse(html: string)
 				})
 				.join('');
 
-			return { text, reading, items };
+			// Extract audio URL if available
+			const audioElement = block.querySelector('audio source');
+			const audioUrl = audioElement?.getAttribute('src') ?? undefined;
+
+			return { text, reading, items, audioUrl };
 		});
 
 	return results;
@@ -100,6 +104,7 @@ export interface Result
 	text: string;
 	reading: string;
 	items: ResultItem[];
+	audioUrl?: string;
 }
 
 export type ResultItem = Meaning | Tag;
